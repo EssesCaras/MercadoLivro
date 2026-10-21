@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: darkred;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5%;
+    box-shadow: 0 2px 5px #00000015;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Barra de pesquisa */
+#busca {
+    flex: 1;
+    max-width: 350px;
+    margin: 0 30px;
+}
+
+#busca form {
+    width: 100%;
+}
+
+#busca-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+#busca-input:focus {
+    border-color: #555555;
+}
+
+#nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#nav-menu a:hover {
+    color: darkgray;
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.theme {
+    display: flex;
+    align-items: center;
+}
+
+.theme-label img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.check {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    #busca {
+        order: 3;
+        max-width: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    #busca-input {
+        width: 100%;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    #nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: darkred;
+    flex-direction: column;
+    padding: 20px 0;
+    }
+    #nav-menu.active {
+    display: flex;
+    }
+
+}
