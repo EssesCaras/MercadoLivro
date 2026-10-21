@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="./src/css/estilo.css">
 </head>
 <body>
+    <header>
+        <h1>Mercado Livro</h1>
+
+        <search id="busca">
+            <form role="search">
+                <input type="text" id="busca-input" placeholder="Digite sua busca">
+            </form>
+        </search>
+
+        <div class="menu-hamburguer" id="menu-icone">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+
+            <a href="#Home">Home</a>
+            <a href="#Produtos">Produtos</a>
+            <a href="#Contato">Contato</a>
+
+            <div class="theme">
+                <input type="checkbox" id="dark" class="check">
+                <label for="dark" class="theme-label" title="Alternar tema"><img src="./src/assets/darkMode.png" alt="Dark Mode"></label>
+            </div>
+
+        </nav>
+
+    </header>
     <script src="./src/js/script.js"></script>
 </body>
 </html>
