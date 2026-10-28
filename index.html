@@ -7,8 +7,42 @@
     <link rel="stylesheet" href="./src/css/estilo.css">
 </head>
 <body>
-    
-    <footer class="main-footer">
+    <main>
+        <section class="banner">
+            <h2>Bem-vindo ao MercadoLivro</h2>
+            <p>A melhor livraria para desenvolvedores</p>
+        </section>
+
+        <section class="perfil-interativo">
+            <h3>Personalize sua experiência</h3>
+            <input type="text" id="inputNome" placeholder="Digite seu nome">
+            <button id="btnAtualizar">Salvar Nome</button>
+        </section>
+
+        <section id="cards">
+            <h3>Livros em destaque</h3>
+            <div class="card-container">
+                <div class="card">
+                    <h4>Javascript para iniciantes</h4>
+                    <p>Aprenda lógica e programação web</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+                <div class="card">
+                    <h4>Dominando HTML e CSS</h4>
+                    <p>Construa layouts modernos</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="previa-livro">
+            <h3>Brinde exclusivo</h3>
+            <button id="btnGerarPrevia">Gerar prévia do livro</button>
+            <div id="containerPrevia"></div>
+        </section>
+    </main>
+  
+   <footer class="main-footer">
       <div class="footer-container">
         
         <div class="footer-section">
