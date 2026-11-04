@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,14 @@
     <header>
         <h1>Mercado Livro</h1>
 
-        <search id="busca">
-        <form role="search">
-            <input type="text" id="busca-input" placeholder="Digite sua busca">
-        </form>
-        </search>
+        <div id="busca">
+            <form role="search">
+                <input
+                    type="text"
+                    id="busca-input"
+                    placeholder="Pesquisar livros...">
+            </form>
+        </div>
 
         <div class="menu-hamburguer" id="menu-icone">
             <span></span>
@@ -24,21 +27,33 @@
 
         <nav id="nav-menu">
 
-            <a href="#Home">Home</a>
-            <a href="#Produtos">Produtos</a>
-            <a href="#Contato">Contato</a>
+            <a href="#home">Home</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
             <a href="#">Carrinho</a>
 
             <div class="theme">
-                <input type="checkbox" id="dark" class="check">
-                <label for="dark" class="theme-label" title="Alternar tema"><img src="./src/assets/darkMode.png" alt="Dark Mode"></label>
+                <input
+                    type="checkbox"
+                    id="dark"
+                    class="check">
+
+                <label
+                    for="dark"
+                    class="theme-label"
+                    title="Alternar Tema">
+                    🌙
+                </label>
             </div>
+
         </nav>
+
     </header>
 
-    <main id="produtos">
-        <section class="banner">
-            <h2>Bem-vindo ao MercadoLivro</h2>
+    <main>
+
+        <section id="home" class="banner">
+            <h2>Bem-vindo ao Mercado Livro</h2>
             <p>A melhor livraria para desenvolvedores</p>
         </section>
 
@@ -48,48 +63,53 @@
             <button id="btnAtualizar">Salvar Nome</button>
         </section>
 
-        <section id="cards">
-            <h3>Livros em destaque</h3>
+        <section id="produtos">
+            <h3>Livros em Destaque</h3>
             <div class="card-container">
                 <div class="card">
-                    <h4>Javascript para iniciantes</h4>
-                    <p>Aprenda lógica e programação web</p>
+                    <h4>JavaScript para Iniciantes</h4>
+                    <p>Aprenda lógica de programação e desenvolvimento web.</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
+
                 <div class="card">
                     <h4>Dominando HTML e CSS</h4>
-                    <p>Construa layouts modernos</p>
+                    <p>Crie layouts modernos e responsivos.</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+
+                <div class="card">
+                    <h4>React do Zero</h4>
+                    <p>Desenvolva aplicações modernas utilizando React.</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
         </section>
 
         <section class="previa-livro">
-            <h3>Brinde exclusivo</h3>
-            <button id="btnGerarPrevia">Gerar prévia do livro</button>
+            <h3>Brinde Exclusivo</h3>
+            <button id="btnGerarPrevia">Gerar Prévia do Livro</button>
             <div id="containerPrevia"></div>
         </section>
     </main>
-  
-    <footer id="contato" class="main-footer">
+
+    <footer class="main-footer" id="contato">
         <div class="footer-container">
-      
             <div class="footer-section">
                 <h3>Mercado Livro</h3>
                 <p>A livraria de todos.</p>
             </div>
-
             <div class="footer-section">
                 <h4>Links Úteis</h4>
                 <ul>
                     <li>
                         <a href="#" id="btn-sobre">Sobre Nós</a>
-                        <p id="desc-sobre" class="texto-oculto">O Mercado Livro é uma plataforma dedicada a conectar leitores aos seus livros favoritos de forma fácil e rápida.</p>
+                        <p id="desc-sobre" class="texto-oculto"> O Mercado Livro é uma plataforma dedicada a conectar leitores aos seus livros favoritos. </p>
                     </li>
 
                     <li>
                         <a href="#" id="btn-fale">Fale Conosco</a>
-                        <p id="desc-fale" class="texto-oculto">Entre em contato conosco através do e-mail: jvobezerra@gmail.com</p>
+                        <p id="desc-fale" class="texto-oculto">E-mail: mig.augsq@yahoo.com</p>
                     </li>
 
                     <li>
@@ -97,17 +117,23 @@
                         <div id="desc-faq" class="texto-oculto sub-menu">
                             <div class="faq-item">
                                 <a href="#" class="btn-pergunta">Como rastrear meu pedido?</a>
-                                <p class="resposta-oculta">Você receberá um código de rastreamento no seu e-mail assim que o livro for postado.</p>
+                                <p class="resposta-oculta">
+                                    Você receberá um código de rastreio
+                                    por e-mail após o envio.
+                                </p>
                             </div>
 
                             <div class="faq-item">
                                 <a href="#" class="btn-pergunta">Qual o prazo de entrega?</a>
-                                <p class="resposta-oculta">O prazo médio varia de 3 a 10 dias úteis, dependendo da sua região.</p>
+                                <p class="resposta-oculta">Entre 3 e 10 dias úteis.</p>
                             </div>
 
                             <div class="faq-item">
                                 <a href="#" class="btn-pergunta">Como funciona a devolução?</a>
-                                <p class="resposta-oculta">Você tem até 7 dias após o recebimento para solicitar a devolução gratuita.</p>
+                                <p class="resposta-oculta">
+                                    Você pode solicitar devolução
+                                    em até 7 dias após o recebimento.
+                                </p>
                             </div>
                         </div>
                     </li>
@@ -116,7 +142,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Mercado Livro. Todos os direitos reservados.</p>
+            <p>© <span id="ano"></span>Mercado Livro. Todos os direitos reservados.</p>
         </div>
     </footer>
 

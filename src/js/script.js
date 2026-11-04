@@ -6,66 +6,65 @@ menuIcone.addEventListener("click", () => {
     menuIcone.classList.toggle("open");
 });
 
-const btnSobre = document.getElementById('btn-sobre');
-const descSobre = document.getElementById('desc-sobre');
+function toggleElemento(botaoId, elementoId) {
 
-btnSobre.addEventListener('click', function(event) {
-    event.preventDefault();
-    descSobre.classList.toggle('ativo');
-});
+    const botao = document.getElementById(botaoId);
+    const elemento = document.getElementById(elementoId);
 
-const btnFale = document.getElementById('btn-fale');
-const descFale = document.getElementById('desc-fale');
-
-btnFale.addEventListener('click', function(event) {
-    event.preventDefault();
-    descFale.classList.toggle('ativo');
-});
-
-const btnFaq = document.getElementById('btn-faq');
-const descFaq = document.getElementById('desc-faq');
-
-btnFaq.addEventListener('click', function(event) {
-    event.preventDefault();
-    descFaq.classList.toggle('ativo');
-});
-
-const perguntas = document.querySelectorAll('.btn-pergunta');
-
-perguntas.forEach(function(pergunta) {
-    pergunta.addEventListener('click', function(event) {
-        event.preventDefault();
-        const resposta = this.nextElementSibling;
-        resposta.classList.toggle('ativo');
-    });
-});
-
-
-const btnAtualizar = document.getElementById('btnAtualizar');
-const inputNome = document.getElementById('inputNome');
-
-if (btnAtualizar) {
-    btnAtualizar.addEventListener('click', function() {
-        if(inputNome.value.trim() !== "") {
-            alert("Oi, " + inputNome.value + "Bem vindo ao MercadoLivro");
-        } else {
-            alert("Digite seu nome");
-        }
+    botao.addEventListener("click", (e) => {
+        e.preventDefault();
+        elemento.classList.toggle("ativo");
     });
 }
 
-const btnGerarPrevia = document.getElementById('btnGerarPrevia');
-const containerPrevia = document.getElementById('containerPrevia');
+toggleElemento("btn-sobre", "desc-sobre");
+toggleElemento("btn-fale", "desc-fale");
+toggleElemento("btn-faq", "desc-faq");
 
-if (btnGerarPrevia) {
-    btnGerarPrevia.addEventListener('click', function() {
-        if (containerPrevia.querySelector('p') === null) {
-            const novaMensagem = document.createElement('p');
-            novaMensagem.textContent = "Prévia gerada com sucesso, aproveite o seu e book de amostra";
-            novaMensagem.style.color = "green";
-            containerPrevia.appendChild(novaMensagem);
-        } else {
-            alert('A prévia já foi gerada anteriormente');
-        }
+document.querySelectorAll(".btn-pergunta").forEach((pergunta) => {
+    pergunta.addEventListener("click", (e) => {
+        e.preventDefault();
+        pergunta.nextElementSibling.classList.toggle("ativo");
     });
-}
+});
+
+const btnAtualizar = document.getElementById("btnAtualizar");
+
+const inputNome = document.getElementById("inputNome");
+
+btnAtualizar.addEventListener("click", () => {
+    const nome = inputNome.value.trim();
+    if(nome){
+        alert(`Olá, ${nome}! Bem-vindo ao Mercado Livro.`);
+    }else{
+        alert("Digite seu nome.");
+    }
+});
+
+const btnGerarPrevia = document.getElementById("btnGerarPrevia");
+
+const containerPrevia = document.getElementById("containerPrevia");
+btnGerarPrevia.addEventListener("click", () => {
+    if(!containerPrevia.querySelector("p")){
+        const p = document.createElement("p");
+        p.textContent = "Prévia gerada com sucesso. Aproveite seu e-book de amostra.";
+        p.style.color = "green";
+        containerPrevia.appendChild(p);
+    }else{
+        alert("A prévia já foi gerada.");
+    }
+});
+
+document.querySelectorAll(".btn-comprar").forEach((botao) => {
+    botao.addEventListener("click", () => {
+        alert("Livro adicionado ao carrinho!");
+    });
+});
+
+const darkMode = document.getElementById("dark");
+darkMode.addEventListener("change", () => {
+    document.body.classList.toggle("dark-theme");
+});
+
+document.getElementById("ano").textContent =
+new Date().getFullYear();

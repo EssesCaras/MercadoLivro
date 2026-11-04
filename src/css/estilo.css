@@ -1,6 +1,82 @@
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+body.dark-theme #nav-menu a {
+    color: #ffffff;
+}
+
+body.dark-theme #nav-menu a:hover {
+    color: #ff4d4d;
+}
+
+body.dark-theme #busca-input {
+    background-color: #2b2b2b;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark-theme #busca-input::placeholder {
+    color: #aaa;
+}
+
+body.dark-theme .banner {
+    background-color: #181818;
+}
+
+body.dark-theme .banner h2 {
+    color: #ff4d4d;
+}
+
+body.dark-theme .card {
+    background-color: #1f1f1f;
+    color: white;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+body.dark-theme .btn-comprar {
+    background-color: #b30000;
+}
+
+body.dark-theme .btn-comprar:hover {
+    background-color: #d60000;
+}
+
+/* Inputs e Botões */
+
+body.dark-theme input {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark-theme button {
+    background-color: #b30000;
+    color: white;
+}
+
+body.dark-theme .main-footer {
+    background-color: #000000;
+}
+
+body.dark-theme .texto-oculto {
+    background-color: #222;
+}
+
+body.dark-theme .resposta-oculta {
+    color: #ddd;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 100px;
 }
 
 header {
