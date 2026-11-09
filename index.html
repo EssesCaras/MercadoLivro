@@ -7,15 +7,13 @@
     <link rel="stylesheet" href="./src/css/estilo.css">
 </head>
 <body>
+    <section id="home"></section>
     <header>
-        <h1>Mercado Livro</h1>
+        <h1 id="logo-pagina">Mercado <span>Livro</span></h1>
 
         <div id="busca">
             <form role="search">
-                <input
-                    type="text"
-                    id="busca-input"
-                    placeholder="Pesquisar livros...">
+                <input type="text" id="busca-input" placeholder="Pesquisar livros...">
             </form>
         </div>
 
@@ -26,15 +24,10 @@
         </div>
 
         <nav id="nav-menu">
-
             <a href="#home">Home</a>
             <a href="#produtos">Produtos</a>
             <a href="#contato">Contato</a>
-
-            <section id="area-carrinho">
-                <h3>Meu Carrinho</h3>
-                <ul id="lista-carrinho"></ul>
-            </section>
+        </nav>
 
             <div class="theme">
                 <input
@@ -50,30 +43,20 @@
                 </label>
             </div>
 
-        </nav>
-
+        <section id="area-carrinho">
+            <h3>Carrinho: <span id="contador-carrinho">0</span></h3>
+            <button id="btn-remover-item">Remover 1</button>
+        </section>
     </header>
 
     <main>
-
-        <section id="home" class="banner">
-            <h2>Bem-vindo ao Mercado Livro</h2>
-            <p>A melhor livraria para desenvolvedores</p>
-        </section>
-
-        <section class="perfil-interativo">
-            <h3>Personalize sua experiência</h3>
-            <input type="text" id="inputNome" placeholder="Digite seu nome">
-            <button id="btnAtualizar">Salvar Nome</button>
-        </section>
-
         <section id="produtos">
-            <h3>Livros em Destaque</h3>
+            <h2>Livros em Destaque</h2>
             <div class="card-container">
                 <div class="card">
-                    <img src="./src/assets/livro1.jpg">
-                    <h4>O Livro Amarelo</h4>
-                    <p>Propostas de Renan Santos para tornar o Brasil melhor.</p>
+                    <img src="./src/assets/livro1.png">
+                    <h4>O dia a dia do programador</h4>
+                    <p>O livro do maior desenvolvedor do Brasil.</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
 
@@ -85,7 +68,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="./src/assets/livro3.jpg">
+                    <img src="./src/assets/Livro3.jpg">
                     <h4>Britney Spears</h4>
                     <p>Aprenda mais sobre a segunda maior cantora de todos os tempos.</p>
                     <button class="btn-comprar">Comprar</button>
@@ -100,8 +83,8 @@
 
                 <div class="card">
                     <img src="./src/assets/livro5.jpg">
-                    <h4>Guia sobre feminismo</h4>
-                    <p>Aprenda mais sobre o movimento e suas lutas.</p>
+                    <h4>O pequeno príncipe</h4>
+                    <p>O melhor livro para as crianças.</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
 
@@ -114,14 +97,9 @@
             </div>
         </section>
 
-        <section class="previa-livro">
-            <h3>Brinde Exclusivo</h3>
-            <button id="btnGerarPrevia">Gerar Prévia do Livro</button>
-            <div id="containerPrevia"></div>
-        </section>
     </main>
 
-    <footer class="main-footer" id="contato">
+    <footer class="footer" id="contato">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Mercado Livro</h3>
@@ -137,7 +115,7 @@
 
                     <li>
                         <a href="#" id="btn-fale">Fale Conosco</a>
-                        <p id="desc-fale" class="texto-oculto">E-mail: mig.augsq@yahoo.com</p>
+                        <p id="desc-fale" class="texto-oculto">Não estamos disponível no momento.</p>
                     </li>
 
                     <li>
@@ -170,7 +148,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© <span id="ano"></span>Mercado Livro. Todos os direitos reservados.</p>
+            <p>© <span id="ano"></span> Mercado Livro. Todos os direitos reservados.</p>
         </div>
     </footer>
 

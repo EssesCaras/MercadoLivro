@@ -1,3 +1,4 @@
+// Menu hamburguer
 const menuIcone = document.getElementById("menu-icone");
 const navMenu = document.getElementById("nav-menu");
 
@@ -6,6 +7,7 @@ menuIcone.addEventListener("click", () => {
     menuIcone.classList.toggle("open");
 });
 
+// Footer
 const btnSobre = document.getElementById("btn-sobre");
 const descSobre = document.getElementById("desc-sobre");
 
@@ -45,86 +47,39 @@ perguntas.forEach((pergunta) => {
     });
 });
 
-const btnAtualizar = document.getElementById("btnAtualizar");
-
-const inputNome = document.getElementById("inputNome");
-
-btnAtualizar.addEventListener("click", () => {
-
-    const nome =
-    inputNome.value.trim();
-
-    if (nome !== "") {
-        alert(
-            `Olá, ${nome}! Bem-vindo ao Mercado Livro!`
-        );
-
-        localStorage.setItem("nomeUsuario", nome);
-
-    } else {
-        alert("Digite seu nome.");
-    }
-});
-
-const btnGerarPrevia = document.getElementById("btnGerarPrevia");
-
-const containerPrevia = document.getElementById("containerPrevia");
-
-btnGerarPrevia.addEventListener("click", () => {
-
-    if (!containerPrevia.querySelector("p")) {
-
-        const mensagem =
-        document.createElement("p");
-
-        mensagem.textContent =
-        "Prévia gerada com sucesso! Aproveite seu e-book de amostra.";
-
-        mensagem.style.color = "green";
-
-        containerPrevia.appendChild(mensagem);
-
-    } else {
-        alert(
-            "A prévia já foi gerada anteriormente."
-        );
-    }
-});
-
+// Tema escuro
 const darkMode = document.getElementById("dark");
-
+const themeLabel = document.querySelector(".theme-label");
 const temaSalvo = localStorage.getItem("tema");
 
 if (temaSalvo === "escuro") {
-
     document.body.classList.add("dark-theme");
     darkMode.checked = true;
-
+    themeLabel.textContent = "☀️";
+} else {
+    themeLabel.textContent = "🌙";
 }
 
+// Alterna entre tema claro e escuro
 darkMode.addEventListener("change", () => {
 
     document.body.classList.toggle("dark-theme");
 
-    if (
-        document.body.classList.contains(
-            "dark-theme"
-        )
-    ) {
-        localStorage.setItem(
-            "tema",
-            "escuro"
-        );
+    if (document.body.classList.contains("dark-theme")) {
+
+        themeLabel.textContent = "☀️";
+        localStorage.setItem("tema", "escuro");
+
     } else {
-        localStorage.setItem(
-            "tema",
-            "claro"
-        );
+
+        themeLabel.textContent = "🌙";
+        localStorage.setItem("tema", "claro");
+
     }
 });
 
-const ano =
-document.getElementById("ano");
+// Coloca o ano certo
+const ano = document.getElementById("ano");
 
 if (ano) {
 
@@ -132,104 +87,38 @@ if (ano) {
     new Date().getFullYear();
 }
 
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+// Carrinho
+let quantidade = Number(localStorage.getItem("quantidadeCarrinho")) || 0;
 
-const contadorCarrinho =
-document.getElementById(
-    "contador-carrinho"
-);
+const contadorCarrinho = document.getElementById("contador-carrinho");
 
-const listaCarrinho =
-document.getElementById(
-    "lista-carrinho"
-);
+const btnRemoverItem = document.getElementById("btn-remover-item");
 
-const botoesComprar =
-document.querySelectorAll(
-    ".btn-comprar"
-);
-
-botoesComprar.forEach((botao) => {
-
-    botao.addEventListener("click", () => {
-
-        const card =
-        botao.closest(".card");
-
-        const nomeLivro =
-        card.querySelector("h4")
-            .textContent;
-
-        carrinho.push(nomeLivro);
-
-        localStorage.setItem(
-            "carrinho",
-            JSON.stringify(carrinho)
-        );
-
-        atualizarCarrinho();
-
-        alert(
-            `${nomeLivro} foi adicionado ao carrinho!`
-        );
-
-    });
-
-});
+const botoesComprar = document.querySelectorAll(".btn-comprar");
 
 function atualizarCarrinho() {
 
-    if (contadorCarrinho) {
+    contadorCarrinho.textContent = quantidade;
 
-        contadorCarrinho.textContent =
-        carrinho.length;
-
-    }
-
-    if (listaCarrinho) {
-
-        listaCarrinho.innerHTML = "";
-
-        carrinho.forEach((livro, indice) => {
-
-            const li =
-            document.createElement("li");
-
-            li.innerHTML = `
-                ${livro}
-                <button
-                onclick="removerItem(${indice})">
-                ❌
-                </button>
-            `;
-
-            listaCarrinho.appendChild(li);
-
-        });
-    }
-}
-
-function removerItem(indice) {
-
-    carrinho.splice(indice, 1);
-
-    localStorage.setItem(
-        "carrinho",
-        JSON.stringify(carrinho)
+    localStorage.setItem("quantidadeCarrinho", quantidade
     );
-
-    atualizarCarrinho();
 }
 
-function limparCarrinho() {
+botoesComprar.forEach((botao) => {
+    botao.addEventListener("click", () => {
+        quantidade++;
 
-    carrinho = [];
+        atualizarCarrinho();
+    });
+});
 
-    localStorage.removeItem(
-        "carrinho"
-    );
+btnRemoverItem.addEventListener("click", () => {
 
-    atualizarCarrinho();
-}
+    if (quantidade > 0) {
+        quantidade--;
+
+        atualizarCarrinho();
+    }
+});
 
 atualizarCarrinho();

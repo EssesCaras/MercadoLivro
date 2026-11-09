@@ -1,78 +1,145 @@
+:root {
+    /* Modo escuro */
+    --bg-dark: #121212;
+    --text-color: #ffffff;
+    --bg-header-dark: #1e1e1e;
+    --color-box-shadow: rgba(0,0,0,0.5);
+    --color-dark: #ff4d4d;
+    --bg-body-dark: #2b2b2b;
+    --color-busca-dark: #aaa;
+    --color-box-shadow-card-dark: rgba(255, 255, 255, 0.05);
+    --color-border-dark: #444;
+    --bg-card-dark: #1f1f1f;
+    --btn-color-dark: #b30000;
+    --btn-color-dark-hover: #d60000;
+    --bg-input-text: #2a2a2a;
+    --bg-footer-dark: black;
+    --color-text-oculto-dark: #222;
+    --color-resposta-oculta-dark: #ddd;
+
+    /* Modo claro */
+    --bg-header: darkred;
+    --color-logo-span: #f60101;
+    --color-box-shadow: #00000015;
+    --color-busca: #cccccc;
+    --color-busca-focus: #555555;
+    --color-nav-menu-hover: darkgray;
+    --border-color-card: #ccc;
+    --color-card-h4: #333;
+    --color-card-p: #666;
+    --bg-footer: #1a1a1a;
+    --footer-h4: #bf0606;
+    --footer-hover: #ff0000;
+    --text-shadow1: rgba(255, 0, 0, 0.9);
+    --text-shadow2: rgba(255, 0, 0, 0.6);
+    --color-bottom-border: #333333;
+    --color-bottom: #888888;
+    --color-resposta: #aaaaaa;
+
+    /* Menu hamburguer */
+    --bg-menu-hamburguer: rgba(0, 0, 0, 0.8);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Modo escuro*/
 body.dark-theme {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-dark);
+    color: var(--text-color);
 }
 
 body.dark-theme header {
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    background-color: var(--bg-header-dark);
+    box-shadow: 0 2px 10px var(--color-box-shadow);
+}
+
+body.dark-theme #logo-pagina {
+    font-size: 2rem;
+    margin: 0;
+    white-space: nowrap;
+    color: var(--footer-h4);
+}
+
+body.dark-theme #logo-pagina span {
+    color: var(--btn-color-dark-hover);
+    padding: 3px;
+    text-shadow: 3px 3px solid var(--text-shadow1), 6px 6px solid var(--text-shadow2);
+}
+
+body.dark-theme #logo-pagina:hover {
+    letter-spacing: 7px;
+    cursor: default;
 }
 
 body.dark-theme #nav-menu a {
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 body.dark-theme #nav-menu a:hover {
-    color: #ff4d4d;
+    color: var(--color-dark-theme);
 }
 
 body.dark-theme #busca-input {
-    background-color: #2b2b2b;
-    color: white;
-    border: 1px solid #444;
+    background-color: var(--bg-body-dark);
+    color: var(--text-color);
+    border: 1px solid var(--color-border-dark);
 }
 
 body.dark-theme #busca-input::placeholder {
-    color: #aaa;
+    color: var(--color-busca-dark);
 }
 
-body.dark-theme .banner {
-    background-color: #181818;
+body.dark-theme main h2 {
+    text-align: center;
+    margin-top: 60px;
+    color: rgba(255, 27, 27, 0.94);
 }
 
-body.dark-theme .banner h2 {
-    color: #ff4d4d;
+body.dark-theme main h2:hover{
+    transform: scale(1.2);
 }
 
 body.dark-theme .card {
-    background-color: #1f1f1f;
-    color: white;
-    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    background-color: var(--bg-card-dark);
+    color: var(--text-color);
+    box-shadow: 0 0 10px var(--color-box-shadow-card-dark);
+    border-color: var(--btn-color-dark);
 }
 
 body.dark-theme .btn-comprar {
-    background-color: #b30000;
+    background-color: var(--btn-color-dark);
 }
 
 body.dark-theme .btn-comprar:hover {
-    background-color: #d60000;
+    background-color: var(--btn-color-dark-hover);
 }
 
-/* Inputs e Botões */
-
 body.dark-theme input {
-    background-color: #2a2a2a;
-    color: white;
-    border: 1px solid #444;
+    background-color: var(--bg-input-text);
+    color: var(--text-color);
+    border: 1px solid var(--color-border-dark);
 }
 
 body.dark-theme button {
-    background-color: #b30000;
-    color: white;
+    background-color: var(--btn-color-dark);
+    color: var(--text-color);
 }
 
-body.dark-theme .main-footer {
-    background-color: #000000;
+body.dark-theme footer {
+    background-color: var(--bg-footer-dark);
 }
 
-body.dark-theme .texto-oculto {
-    background-color: #222;
+body.dark-theme texto-oculto {
+    background-color: var(--color-text-oculto-dark);
 }
 
-body.dark-theme .resposta-oculta {
-    color: #ddd;
+body.dark-theme resposta-oculta {
+    color: var(--color-resposta-oculta-dark);
 }
 
+/* Modo claro*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -80,13 +147,13 @@ body {
 }
 
 header {
-    background-color: darkred;
-    color: white;
+    background-color: var(--bg-header);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 5%;
-    box-shadow: 0 2px 5px #00000015;
+    box-shadow: 0 2px 5px var(--color-box-shadow-card-dark);
     position: fixed;
     top: 0;
     left: 0;
@@ -94,10 +161,21 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    font-size: 24px;
+#logo-pagina {
+    font-size: 2rem;
     margin: 0;
     white-space: nowrap;
+    color: var(--footer-hover);
+}
+
+#logo-pagina span {
+    color: var(--color-logo-span); 
+    padding: 3px;
+}
+
+#logo-pagina:hover {
+    letter-spacing: 7px;
+    cursor: default;
 }
 
 /* Barra de pesquisa */
@@ -115,14 +193,14 @@ header h1 {
     width: 100%;
     box-sizing: border-box;
     padding: 11px 15px;
-    border: 1px solid #cccccc;
+    border: 1px solid var(--color-busca);
     border-radius: 20px;
     font-size: 14px;
     outline: none;
 }
 
 #busca-input:focus {
-    border-color: #555555;
+    border-color: var(--color-busca-focus);
 }
 
 #nav-menu {
@@ -132,13 +210,15 @@ header h1 {
 }
 
 #nav-menu a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 15px;
 }
 
 #nav-menu a:hover {
-    color: darkgray;
+    color: var(--color-nav-menu-hover);
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 
 .menu-hamburguer {
@@ -151,7 +231,7 @@ header h1 {
 .menu-hamburguer span {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--text-color);
     border-radius: 2px;
 }
 
@@ -177,12 +257,13 @@ header h1 {
         padding: 15px 5%;
     }
 
-    header h1 {
+    #logo-pagina {
+        order: 1;
         font-size: 20px;
     }
 
     #busca {
-        order: 3;
+        order: 2;
         max-width: none;
         width: 100%;
         margin: 0;
@@ -192,7 +273,16 @@ header h1 {
         width: 100%;
     }
 
+    #area-carrinho {
+        order: 3;
+    }
+
+    .theme {
+        order: 4;
+    }
+
     .menu-hamburguer {
+        order: 5;
         display: flex;
     }
 
@@ -202,7 +292,7 @@ header h1 {
     top: 100%;
     left: 0;
     width: 100%;
-    background: darkred;
+    background: var(--bg-menu-hamburguer);
     flex-direction: column;
     padding: 20px 0;
     }
@@ -212,9 +302,82 @@ header h1 {
     }
 }
 
-.main-footer {
-    background-color: #1a1a1a;
-    color: #fefefe;
+.open span:nth-child(1) {transform: rotate(45deg) translate(5px, 5.5px);}
+.open span:nth-child(2) {opacity: 0;}
+.open span:nth-child(3) {transform: rotate(-45deg) translate(5px, -7px);}
+
+main h2 {
+    text-align: center;
+    margin-top: 60px;
+    color: var(--bg-header);
+}
+
+main h2:hover {
+    transform: scale(1.2);
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--text-color);
+    border: 1px solid var(--border-color-card);
+    border-radius: 8px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    border-color: var(--footer-h4);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border: 5px solid;
+    border-color: var(--footer-hover);
+}
+
+.card h4 {
+    margin-top: 0;
+    color: var(--color-card-h4);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--color-card-p);
+}
+
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.btn-comprar {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-footer);
+    color: var(--text-color);
     padding: 40px 20px 20px 20px;
     font-family: Arial, sans-serif;
 }
@@ -235,15 +398,15 @@ header h1 {
 
 .footer-section h3, 
 .footer-section h4 {
-    color: #bf0606;
+    color: var(--footer-h4);
     margin-bottom: 15px;
     transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
 .footer-section h3:hover,
 .footer-section h4:hover {
-    color: #ff0000;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.6);
+    color: var(--footer-h4-hover);
+    text-shadow: 0 0 10px var(--text-shadow1), 0 0 20px var(--text-shadow2);
 }
 
 .footer-section ul {
@@ -256,33 +419,33 @@ header h1 {
 }
 
 .footer-section a {
-    color: #cccccc;
+    color: var(--color-busca);
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
 .footer-section a:hover {
-    color: #ff0000;
+    color: var(--footer-hover);
     text-decoration: underline;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.9), 0 0 20px rgba(255, 0, 0, 0.6); 
+    text-shadow: 0 0 10px var(--text-shadow1), 0 0 20px var(--text-shadow2); 
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #333333;
-    color: #888888;
+    border-top: 1px solid var(--color-bottom-border);
+    color: var(--color-bottom);
     font-size: 14px;
 }
 
 .texto-oculto {
     display: none;
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 13px;
     margin-top: 5px;
     line-height: 1.4;
-    background-color: #2a2a2a;
+    background-color: var(--bg-input-text);
     padding: 8px;
     border-radius: 4px;
 }
@@ -303,7 +466,7 @@ header h1 {
 
 .resposta-oculta {
     display: none;
-    color: #aaaaaa;
+    color: var(--color-resposta);
     font-size: 12px;
     margin: 3px 0 0 0;
     padding-left: 5px;
@@ -318,39 +481,4 @@ header h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-.card {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    width: 220px;
-    text-align: center;
-}
-
-.card h4 {
-    margin-top: 0;
-    color: #333;
-}
-
-.card p {
-    font-size: 14px;
-    color: #666;
-}
-
-.card img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover; 
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
