@@ -38,6 +38,9 @@
 
     /* Menu hamburguer */
     --bg-menu-hamburguer: rgba(0, 0, 0, 0.8);
+
+    /* Tema claro e escuro */
+    --color-theme: rgba(255, 255, 255, 0.2);
 }
 
 html {
@@ -56,9 +59,6 @@ body.dark-theme header {
 }
 
 body.dark-theme #logo-pagina {
-    font-size: 2rem;
-    margin: 0;
-    white-space: nowrap;
     color: var(--footer-h4);
 }
 
@@ -238,6 +238,7 @@ header {
 .theme {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .theme-label img {
@@ -246,8 +247,44 @@ header {
     cursor: pointer;
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.switch .slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--border-color-card);
+    border-radius: 34px;
+    transition: 0.3s;
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
 .check {
     display: none;
+}
+
+.check:checked + .switch .slider {
+    background-color: var(--btn-color-dark);
+}
+
+.check:checked + .switch .slider:before {
+    transform: translateX(26px);
 }
 
 @media (max-width: 768px) {
@@ -263,10 +300,11 @@ header {
     }
 
     #busca {
-        order: 2;
+        order: 5;
         max-width: none;
         width: 100%;
         margin: 0;
+        flex-basis: 100%;
     }
 
     #busca-input {
@@ -274,15 +312,17 @@ header {
     }
 
     #area-carrinho {
-        order: 3;
+        order: 2;
     }
 
     .theme {
         order: 4;
+        text-align: center;
+        width: 100%;
     }
 
     .menu-hamburguer {
-        order: 5;
+        order: 3;
         display: flex;
     }
 
@@ -372,6 +412,8 @@ main h2:hover {
 
 .btn-comprar:hover {
     transform: scale(1.2);
+    background-color: var(--btn-color-dark);
+    color: var(--text-color);
 }
 
 /* Footer */

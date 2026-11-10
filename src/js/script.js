@@ -49,15 +49,11 @@ perguntas.forEach((pergunta) => {
 
 // Tema escuro
 const darkMode = document.getElementById("dark");
-const themeLabel = document.querySelector(".theme-label");
 const temaSalvo = localStorage.getItem("tema");
 
 if (temaSalvo === "escuro") {
     document.body.classList.add("dark-theme");
     darkMode.checked = true;
-    themeLabel.textContent = "☀️";
-} else {
-    themeLabel.textContent = "🌙";
 }
 
 // Alterna entre tema claro e escuro
@@ -66,15 +62,9 @@ darkMode.addEventListener("change", () => {
     document.body.classList.toggle("dark-theme");
 
     if (document.body.classList.contains("dark-theme")) {
-
-        themeLabel.textContent = "☀️";
         localStorage.setItem("tema", "escuro");
-
     } else {
-
-        themeLabel.textContent = "🌙";
         localStorage.setItem("tema", "claro");
-
     }
 });
 
@@ -100,8 +90,13 @@ function atualizarCarrinho() {
 
     contadorCarrinho.textContent = quantidade;
 
-    localStorage.setItem("quantidadeCarrinho", quantidade
-    );
+    localStorage.setItem("quantidadeCarrinho", quantidade);
+
+    if (quantidade > 0) {
+        btnRemoverItem.style.display = "inline-block";
+    } else {
+        btnRemoverItem.style.display = "none";
+    }
 }
 
 botoesComprar.forEach((botao) => {
